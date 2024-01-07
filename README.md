@@ -36,3 +36,6 @@ The application was creating as a homework challenge from the USYD Coding Bootca
 - CSS (Styling)
 - Open Weather API
 
+## Usage
+You can access the webpage through this link:
+Alternatively, you may access the repository through this link: 
