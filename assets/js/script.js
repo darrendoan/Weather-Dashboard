@@ -54,7 +54,7 @@ function loadSearchHistory() {
 
 var getRecentCityCoordinates = (cityName) => {
     if (!cityName) return; // return if cityName is empty
-    var GEOCODING_API_URL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
+    var GEOCODING_API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
 
     // get entered city coordinates (latitude, longitude and name) from the API response
     fetch(GEOCODING_API_URL).then(res => res.json()).then(data => {
@@ -68,7 +68,7 @@ var getRecentCityCoordinates = (cityName) => {
 
 
  var getWeatherDetails = (cityName, latitude, longitude) => {
-    var WEATHER_API_URL = `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`;
+    var WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`;
 
     fetch(WEATHER_API_URL).then(res => res.json()).then(data => {
         var uniqueForecastDays = [];
@@ -101,7 +101,7 @@ var getRecentCityCoordinates = (cityName) => {
  var getCityCoordinates = () => {
     var cityName = cityInput.value.trim(); // gets city name and removes any spaces
     if (!cityName) return; // return if cityName is empty
-    var GEOCODING_API_URL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
+    var GEOCODING_API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
 
     // get entered city coordinates (latitude, longitude and name) from the API response
     fetch(GEOCODING_API_URL).then(res => res.json()).then(data => {
