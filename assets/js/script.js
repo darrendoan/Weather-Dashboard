@@ -41,7 +41,6 @@
 function loadSearchHistory() {
     
     var recentSearches = localStorage.getItem("searchHistory")
-    console.log(recentSearches)
     if (recentSearches === null) return;
     recentSearches = recentSearches.split(",")
     for (var i = 0; i < recentSearches.length; i++) {
