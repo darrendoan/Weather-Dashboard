@@ -39,7 +39,11 @@
 
 // searchHistory.addEventListener("load", loadSearchHistory)
 function loadSearchHistory() {
-    var recentSearches = localStorage.getItem("searchHistory").split(",")
+    
+    var recentSearches = localStorage.getItem("searchHistory")
+    console.log(recentSearches)
+    if (recentSearches === null) return;
+    recentSearches = recentSearches.split(",")
     for (var i = 0; i < recentSearches.length; i++) {
         var recentButton = document.createElement("button");
         // var buttonContent = document.createTextNode(recentSearches[i])
@@ -47,8 +51,6 @@ function loadSearchHistory() {
         recentButton.setAttribute("onclick", `getRecentCityCoordinates("${recentSearches[i]}")`)
         recentButton.setAttribute("id", "recentBtn");
         searchHistory.appendChild(recentButton);
-        
-        
     }
 }
 
