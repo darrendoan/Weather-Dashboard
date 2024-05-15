@@ -1,79 +1,126 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Weather Dashboard</title>
-        <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
-        rel="stylesheet" /> -->
-        <link rel="stylesheet" href="./assets/css/style.css" />
-        <script src="assets/js/script.js" defer></script>
-    </head>
 
-    <body>
-        <h1>Weather Dashboard</h1>
-        <div class="container">
-            <div class="weather-input">
-                <h3>Enter a City Name</h3>
-                <input class="city-input" type="text" placeholder="E.g., New York, London, Tokyo">
-                <button class="search-btn">Search</button>
-                <div class="seperator"></div>
-                <button class="location-btn">Use Current Location</button>
-                <div class="seperator"></div>
-                <div id="recent-searches">
-                    <h3>Recent Searches</h3>
-                </div>
-                
-            </div>
-            <div class="weather-data">
-                <div class="current-weather">
-                    <div class="details">
-                        <h2>______ ( ______ )</h2>
-                        <h6>Temperature: __°C</h6>
-                        <h6>Wind: __ km/h</h6>
-                        <h6>Humidity: __%</h6>
-                    </div>
-                </div>
-                <div class="days-forecast">
-                    <h2>5-Day Forecast</h2>
-                    <ul class="weather-cards">
-                        <li class="card">
-                            <h3>( ______ )</h3>
-                            <h6>Temp : __°C</h6>
-                            <h6>Wind: __ km/h</h6>
-                            <h6>Humidity: __%</h6>
-                        </li>
-                        <li class="card">
-                            <h3>( ______ )</h3>
-                            <h6>Temp : __°C</h6>
-                            <h6>Wind: __ km/h</h6>
-                            <h6>Humidity: __%</h6>
-                        </li>
-                        <li class="card">
-                            <h3>( ______ )</h3>
-                            <h6>Temp : __°C</h6>
-                            <h6>Wind: __ km/h</h6>
-                            <h6>Humidity: __%</h6>
-                        </li>
-                        <li class="card">
-                            <h3>( ______ )</h3>
-                            <h6>Temp : __°C</h6>
-                            <h6>Wind: __ km/h</h6>
-                            <h6>Humidity: __%</h6>
-                        </li>
-                        <li class="card">
-                            <h3>( ______ )</h3>
-                            <h6>Temp : __°C</h6>
-                            <h6>Wind: __ km/h</h6>
-                            <h6>Humidity: __%</h6>
-                        </li>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </body>
-  </html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Darren's Weather Dashboard</title>
+</head>
 
+<body>
+    <header id="header" class="container">
+        <h1>Darren's Weather Dashboard</h1>
+    </header>
+    <input type="text" id="search-input">
+    <button id="search-button">Search</button>
+    <div id="search-history">
+        <h2>Search History:</h2>
+        <ul id="city-history">
+        </ul>
+    </div>
+    <main id="weather-box" class="container">
+        <section class="row justify-center">
+            <!-- Current Weather DAY Display Box -->
+            <article class="card-column">
+                <figure class="card-block">
+                    <h2 class="header-block">Current Weather Forecast</h2>
+                    <aside class="weather-block">
+                        <p id="cityday0"></p>
+                        <p id="cityname0"></p>
+                        <a href="https://openweathermap.org/img/wn/10d@2x.png" target=""><img id="weather-icon"
+                                src="https://openweathermap.org/img/wn/10d@2x.png"
+                                alt="Current Date and Weather displayed for the searched city which includes: Temperature, Humidity, and Wind."></a>
+                        <p id="temp0">Temperature:</p>
+                        <p id="humid0">Humidity:</p>
+                        <p id="wind0">Wind:</p>
+                    </aside>
+                </figure>
+            </article>
+        </section>
+        <!-- Start: (5) Day Weather Forecast -->
+        <!-- Day: One -->
+        <section class="row">
+            <article class="card-column">
+                <figure class="card-block">
+                    <h2 class="header-block">One Day Forecast</h2>
+                    <aside class="weather-block">
+                        <p id="cityday1"></p>
+                        <p id="cityname"></p>
+                        <a href="https://openweathermap.org/img/wn/10d@2x.png" target=""><img id="weather-icon1"
+                                src="https://openweathermap.org/img/wn/10d@2x.png"
+                                alt="One Day away weather forecast, displayed for the searched city which includes: City, Date, Weather Icon, Temperature, Humidity, and Wind."></a>
+                        <p id="temp1">Temperature:</p>
+                        <p id="humid1">Humidity:</p>
+                        <p id="wind1">Wind:</p>
+                    </aside>
+                </figure>
+            </article>
+            <!-- Day: Two -->
+            <article class="card-column">
+                <figure class="card-block">
+                    <h2 class="header-block">Two Day Forecast</h2>
+                    <aside class="weather-block">
+                        <p id="cityday2"></p>
+                        <p id="cityname"></p>
+                        <a href="https://openweathermap.org/img/wn/10d@2x.png" target=""><img id="weather-icon2"
+                                src="https://openweathermap.org/img/wn/10d@2x.png"
+                                alt="Two Day's away weather forecast, displayed for the searched city which includes: City, Date, Weather Icon, Temperature, Humidity, and Wind."></a>
+                        <p id="temp2">Temperature:</p>
+                        <p id="humid2">Humidity:</p>
+                        <p id="wind2">Wind:</p>
+                    </aside>
+                </figure>
+            </article>
+            <!-- Day: Three -->
+            <article class="card-column">
+                <figure class="card-block">
+                    <h2 class="header-block">Three Day Forecast</h2>
+                    <aside class="weather-block">
+                        <p id="cityday3"></p>
+                        <a href="https://openweathermap.org/img/wn/10d@2x.png" target=""><img id="weather-icon3"
+                                src="https://openweathermap.org/img/wn/10d@2x.png"
+                                alt="Three Day's away weather forecast, displayed for the searched city which includes: City, Date, Weather Icon, Temperature, Humidity, and Wind."></a>
+                        <p id="temp3">Temperature:</p>
+                        <p id="humid3">Humidity:</p>
+                        <p id="wind3">Wind:</p>
+                    </aside>
+                </figure>
+            </article>
+            <!-- Day: Four -->
+            <article class="card-column">
+                <figure class="card-block">
+                    <h2 class="header-block">Four Day Forecast</h2>
+                    <aside class="weather-block">
+                        <p id="cityday4"></p>
+                        <a href="https://openweathermap.org/img/wn/10d@2x.png" target=""><img id="weather-icon4"
+                                src="https://openweathermap.org/img/wn/10d@2x.png"
+                                alt="Four Day's away weather forecast, displayed for the searched city which includes: City, Date, Weather Icon, Temperature, Humidity, and Wind."></a>
+                        <p id="temp4">Temperature:</p>
+                        <p id="humid4">Humidity:</p>
+                        <p id="wind4">Wind:</p>
+                    </aside>
+                </figure>
+            </article>
+            <!-- Day: Five -->
+            <article class="card-column">
+                <figure class="card-block">
+                    <h2 class="header-block">Five Day Forecast</h2>
+                    <aside class="weather-block">
+                        <p id="cityday5"></p>
+                        <a href="https://openweathermap.org/img/wn/10d@2x.png" target=""><img id="weather-icon5"
+                                src="https://openweathermap.org/img/wn/10d@2x.png"
+                                alt="Five Day's away weather forecast, displayed for the searched city which includes: City, Date, Weather Icon, Temperature, Humidity, and Wind."></a>
+                        <p id="temp5">Temperature:</p>
+                        <p id="humid5">Humidity:</p>
+                        <p id="wind5">Wind:</p>
+                    </aside>
+                </figure>
+            </article>
+        </section>
+        <!-- Section of 5 Day Weather Container Ends -->
+        <script src="./assets/js/script.js"></script>
+</body>
 
+</html>
